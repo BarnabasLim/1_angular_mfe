@@ -1,0 +1,23 @@
+
+1. Create react app
+>npx create-react-app react_shell --template typescript
+
+>node -v
+v16.17.1
+
+>npm -v
+8.15.0
+
+>npm view react version
+18.2.0
+
+2. Setup Tailwind
+https://tailwindcss.com/docs/installation
+
+3. Setup Daisy UI
+https://daisyui.com/components/button/
+
+4. Setup Router
+
+
+
