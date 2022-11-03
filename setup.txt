@@ -18,6 +18,14 @@ https://tailwindcss.com/docs/installation
 https://daisyui.com/components/button/
 
 4. Setup Router
+Refer to https://reactrouter.com/en/main/components/routes
+https://github.com/BarnabasLim/GithubFinder_DaisyUI/blob/master/src/App.js
+
+5. Setup Context
+Refer to https://github.com/BarnabasLim/GithubFinder_DaisyUI/blob/master/src/context/github/githubContext.jsx
+pass setState Value through context
+https://stackoverflow.com/questions/58193424/passing-state-with-usecontext-in-typescript
+
 
 
 
