@@ -1,12 +1,10 @@
 import {useContext} from 'react'
-import logo from './logo.svg';
-import {BrowserRouter as Router, Route, Routes, Link,Navigate} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes,Navigate} from 'react-router-dom';
 import overall_settings_context from './context/Overall_settings';
 import Landing from './pages/Landing/Landing';
-type user={
-    id:Number;
-    name:String;
-  }|null;
+import Navigation from './component/Navigation'
+import {user} from './context/data.models'
+
 const Entry = () => {
   let overall_settings=useContext(overall_settings_context)
   let user=overall_settings?overall_settings?.user:null;
@@ -14,6 +12,7 @@ const Entry = () => {
   let handleLogout=overall_settings?overall_settings?.handleLogout:function(){}
   return (
     <div className="App">
+        
         <Router>
           <Navigation/>
           {user?
@@ -68,15 +67,7 @@ const Entry = () => {
 }
 export default Entry;
 
-function Navigation(){
-    return (
-      <nav>
-        <Link to='/' >Home</Link>
-        <Link to='/about' >About</Link>
-        <Link to='/notfound' >Not Found</Link>
-      </nav>
-    );
-  }
+
 
   function About(){
     return <h2>About (Protected: authenticated User Required)</h2>

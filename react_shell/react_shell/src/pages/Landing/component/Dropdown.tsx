@@ -1,11 +1,10 @@
-import React, { useContext ,useState } from 'react'
+import React, { useContext} from 'react'
 import overall_settings_context from '../../../context/Overall_settings';
 import {user} from '../../../context/data.models'
 
 const Dropdown = ({currSelection,setCurrSelection}:{currSelection:user,setCurrSelection: (user:user)=>void}) => {
     let overall_settings=useContext(overall_settings_context)
     let userList=overall_settings?overall_settings?.userList:[];
-    let setUser=overall_settings?overall_settings?.setUser:()=>{};
 
 
     return (
