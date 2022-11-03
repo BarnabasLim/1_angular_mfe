@@ -14,39 +14,45 @@ const Entry = () => {
     <div className="App">
         
         <Router>
-          <Navigation/>
-          {user?
-            (<div>
-              <button onClick={handleLogout}>Sign Out</button>
-              <p>Welcome {user.name}</p>
-            </div>)
-            :
-            (<button onClick={handleLogin}>Log in</button>)
+          <Navigation user={user}>
+            <>
+              {user?
+                (<div>
+                  <button onClick={handleLogout}>Sign Out</button>
+                  <p>Welcome {user.name}</p>
+                </div>)
+                :
+                (<button onClick={handleLogin}>Log in</button>)
 
-          }
-          
-          <Routes>
-                <Route path='/' element={
-                    <Landing/>
-                }/>
-                <Route path='/about' element={
-                  <ProtectedRoute user={user}>
-                    <About/>
-                  </ProtectedRoute>
-                }/>
-                <Route path='/notfound' element={
-                  <ProtectedRoute user={user}>
-                    <NotFound/>
-                  </ProtectedRoute>
-                
-                }/>
-                <Route path='/*' element={
-                  <ProtectedRoute user={user}>
-                    <NotFound/>
-                  </ProtectedRoute>
-                            
-                }/>
-          </Routes>
+              }
+              
+              <Routes>
+                    <Route path='/' element={
+                        <Landing/>
+                    }/>
+                    <Route path='/about' element={
+                      <ProtectedRoute user={user}>
+                        <About/>
+                      </ProtectedRoute>
+                    }/>
+                    <Route path='/notfound' element={
+                      <ProtectedRoute user={user}>
+                        <NotFound/>
+                      </ProtectedRoute>
+                    
+                    }/>
+                    <Route path='/*' element={
+                      <ProtectedRoute user={user}>
+                        <NotFound/>
+                      </ProtectedRoute>
+                                
+                    }/>
+              </Routes>
+            </>
+            
+            
+          </Navigation>
+
         </Router>
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
