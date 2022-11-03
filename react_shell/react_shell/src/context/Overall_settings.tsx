@@ -1,14 +1,13 @@
 //use context in typescript https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context/
 //
-import React,{createContext, useState} from 'react'
-import { JsxEmit } from 'typescript';
-type user={
-    id:Number;
-    name:String;
-  }|null;
+import React,{Dispatch, SetStateAction,createContext, useState} from 'react'
+import {user} from './data.models'
+
 interface overall_settings_context_prop {
     user: user;
     mode: String;
+    userList:user[]
+    setUser:Dispatch<SetStateAction<user>>;
     handleLogin: () => void;
     handleLogout:() => void;
   }
@@ -34,6 +33,8 @@ export function Overall_settings_context_Provider(props:{children: JSX.Element})
     const overall_settings_context_value:overall_settings_context_prop={  
             user:user,
             mode:mode,
+            userList:userList,
+            setUser:setUser,
             handleLogin:handleLogin,
             handleLogout:handleLogout,
     }

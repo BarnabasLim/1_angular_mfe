@@ -1,9 +1,8 @@
-import React,{useState,useContext} from 'react'
+import {useContext} from 'react'
 import logo from './logo.svg';
-import './App.css';
-import Landing from './pages/Landing';
 import {BrowserRouter as Router, Route, Routes, Link,Navigate} from 'react-router-dom';
-import overall_settings_context, {Overall_settings_context_Provider} from './context/Overall_settings';
+import overall_settings_context from './context/Overall_settings';
+import Landing from './pages/Landing/Landing';
 type user={
     id:Number;
     name:String;
@@ -50,7 +49,7 @@ const Entry = () => {
                 }/>
           </Routes>
         </Router>
-        <header className="App-header">
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
@@ -63,7 +62,7 @@ const Entry = () => {
           >
             Learn React
           </a>
-        </header>
+        </header> */}
       </div>
   )
 }
